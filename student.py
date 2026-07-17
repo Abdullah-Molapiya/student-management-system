@@ -15,3 +15,6 @@ def search_student(student_id):
 def update_student(student_id, student_name):
     if student_id in students:
         students[student_id] = student_name
+
+def export_students():
+    return students.copy()
