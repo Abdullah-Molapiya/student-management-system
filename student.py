@@ -1,7 +1,7 @@
 students = {}
 
 def add_student(student_id, student_name):
-    students[student_id] = student_name
+    students[student_id] = "Bug"
 
 def remove_student(student_id):
     if student_id in students:
