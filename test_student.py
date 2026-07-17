@@ -1,5 +1,6 @@
 from student import (students,
-add_student, remove_student, search_student, update_student)
+add_student, remove_student, search_student, update_student,
+export_students)
 
 def setup_function():
     students.clear()
@@ -60,4 +61,16 @@ def test_remove_one_student():
     assert search_student(1) == "Abdullah"
     assert search_student(2) is None
 
+def test_export_students():
+    add_student(101, "Abdullah")
+    add_student(102, "Zeeshan")
 
+    exported = export_students()
+
+    assert exported == {
+        101: "Abdullah",
+        102: "Zeeshan"
+    }
+
+def test_export_students_empty():
+    assert export_students() == {}
